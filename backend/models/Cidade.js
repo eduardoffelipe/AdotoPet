@@ -4,6 +4,8 @@ module.exports = function CidadeModelFactory(sequelize, DataTypes) {
   const Cidade = sequelize.define("Cidade", {
     nome: DataTypes.STRING,
     sigla: DataTypes.STRING,
+    estadoNome: DataTypes.STRING,
+    estadoSigla: DataTypes.STRING,
     ativo: {
       type: DataTypes.BOOLEAN,
       allowNull: false,
@@ -19,7 +21,7 @@ module.exports = function CidadeModelFactory(sequelize, DataTypes) {
   });
 
   Cidade.associate = function(models) {
-    Cidade.hasMany(models.Cidade)
+    Cidade.hasMany(models.Usuario)
   }
 
   return Cidade;

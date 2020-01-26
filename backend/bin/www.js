@@ -42,7 +42,7 @@ const port = normalizePort(process.env.PORT || '3333');
 app.set('port', port);
 
 const server = http.createServer(app);
-
+debugger;
 initServer(models, env, server, config)
 .then(() => console.log('\n\n\n') )
 .catch(err => console.log(err) );

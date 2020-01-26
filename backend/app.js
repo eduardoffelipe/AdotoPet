@@ -1,11 +1,19 @@
 const express = require('express')
 const app = express();
 const moment = require('moment');
+const user = require('./routes/user')
+const bodyParser = require('body-parser');
+
+
 app.use(express.json())
+app.use(bodyParser.json({
+    limit: '50mb'
+}));
 
 app.get('/', async (req, res) => {
   res.send('HELLO WORLD!!')
 })
+app.use('/user', user)
 
 moment.locale("pt-br");
 app.use(function(err, req, res, next) {

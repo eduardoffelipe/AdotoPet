@@ -7,9 +7,12 @@
     "dev": "npx cross-env NODE_ENV=development TZ=America/Fortaleza WEB_MEMORY=1224 node --expose-gc --inspect ./bin/www"
   },
   "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "body-parser": "^1.19.0",
     "debug": "^4.1.1",
     "express": "^4.17.1",
     "http": "^0.0.0",
+    "jsonwebtoken": "^8.5.1",
     "moment": "^2.24.0",
     "moment-timezone": "^0.5.27",
     "npx": "^10.2.1",

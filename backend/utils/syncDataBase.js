@@ -14,8 +14,7 @@ if(env.toUpperCase() != "development".toUpperCase()){
 
 module.exports = async function SequelizePostgresSyncDataBase(){
     console.log("============ Syncing DataBase ============");
-    await models.sequelize.sync({ alter: false, force: false });
-    let diffSQL = await models.sequelize.syncDiff(config.dummy);
+    await models.sequelize.sync({ alter: true, force: true });
     console.log("============ Syncing DataBase Timezone ============");
     await models.sequelize.query(`set timezone TO '${process.env.TZ}';`,{
         type: models.sequelize.QueryTypes.SELECT

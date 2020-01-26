@@ -12,15 +12,15 @@ module.exports = function SessaoModelFactory(sequelize, DataTypes) {
     },
   }, {
     freezeTableName: true,
-        defaultScope: {
-            where: {
-                ativo: true
-            }
-        },
+    defaultScope: {
+      where: {
+        ativo: true
+      }
+    },
   });
 
   Sessao.associate = function(models) {
-    Sessao.belongsTo(models.Usuario)
+    models.Sessao.belongsTo(models.Usuario)
   }
 
   return Sessao;
