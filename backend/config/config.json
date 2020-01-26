@@ -1,0 +1,28 @@
+{
+  "development": {
+    "database": "adotopet",
+    "username": "duduzada",
+    "password": "fuiTrolei",
+    "host":     "localhost",
+    "dialect":  "postgres",
+    "dummy":    "postgres://duduzada:fuiTrolei@localhost/adotopet_dummy",
+    "log_url": "http://localhost:9000",
+    "use_in_memory_session_store": true
+  },
+  "test": {
+    "username": "root",
+    "password": null,
+    "database": "database_test",
+    "host": "127.0.0.1",
+    "dialect": "mysql",
+    "operatorsAliases": false
+  },
+  "production": {
+    "username": "root",
+    "password": null,
+    "database": "database_production",
+    "host": "127.0.0.1",
+    "dialect": "mysql",
+    "operatorsAliases": false
+  }
+}

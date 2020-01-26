@@ -4,13 +4,23 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "dev": "nodemon src/server.js"
+    "dev": "npx cross-env NODE_ENV=development TZ=America/Fortaleza WEB_MEMORY=1224 node --expose-gc --inspect ./bin/www"
   },
   "dependencies": {
+    "debug": "^4.1.1",
     "express": "^4.17.1",
-    "mongoose": "^5.8.9"
+    "http": "^0.0.0",
+    "moment": "^2.24.0",
+    "moment-timezone": "^0.5.27",
+    "npx": "^10.2.1",
+    "pg": "^7.17.1",
+    "sequelize": "^5.21.3",
+    "sequelize-log-syntax-colors": "^2.0.0",
+    "sequelize-sync-diff": "^0.2.3",
+    "socket.io-client": "^2.3.0"
   },
   "devDependencies": {
-    "nodemon": "^2.0.2"
+    "nodemon": "^2.0.2",
+    "sequelize-cli": "^5.5.1"
   }
 }
