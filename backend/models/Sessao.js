@@ -20,7 +20,7 @@ module.exports = function SessaoModelFactory(sequelize, DataTypes) {
   });
 
   Sessao.associate = function(models) {
-    models.Sessao.belongsTo(models.Usuario)
+    Sessao.belongsTo(models.Usuario)
   }
 
   return Sessao;

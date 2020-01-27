@@ -13,14 +13,8 @@ if(env.toUpperCase() != "development".toUpperCase()){
 
 
 module.exports = async function SequelizePostgresSyncDataBase(){
-    console.log("============ Syncing DataBase ============");
-    await models.sequelize.sync({ alter: true, force: true });
     console.log("============ Syncing DataBase Timezone ============");
     await models.sequelize.query(`set timezone TO '${process.env.TZ}';`,{
-        type: models.sequelize.QueryTypes.SELECT
-    });
-    console.log("============ Syncing DataBase Tables ============");
-    await models.sequelize.query(diffSQL.replaceAll("\"\"","\""),{
         type: models.sequelize.QueryTypes.SELECT
     });
     console.log("============ Synced DataBase ============");
