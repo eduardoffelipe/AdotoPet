@@ -27,7 +27,7 @@ module.exports = () => async function (req, res, next) {
       if(err){
         return res.status(401).send({error: 'Token invalido'})
       }
-      const user = await models.findOne({
+      const user = await models.Usuario.findOne({
         where:{
           id: decoded.id
         }
@@ -40,7 +40,7 @@ module.exports = () => async function (req, res, next) {
       req.session = {user: user.dataValues}
       next()
     })
-    
+
   } catch (err){
     console.error(err);
     return res.status(500).send()
